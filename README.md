@@ -47,17 +47,17 @@
 
 2. Open config.ini and add values for password in postgres credentials
 
-3. Navigate to the folder in which the repository is cloned. Open command line inside the folder and run
+3. Navigate to the folder in which the repository is cloned. Open command line inside the folder and run<br>
  docker compose up
 
-4. Check the container id of the service which is running the python script. Open another command line within the folder and run
+4. Check the container id of the service which is running the python script. Open another command line within the folder and run <br>
  docker ps
 ![](https://github.com/mihirrane/fetch-data-engineering-takehome-test/blob/main/images/docker_ps.png)
 
  Copy the container id corresponding to the image fetch-sqs\_to\_postgres
 
 
-5. The container is running infinitely but we need to enter inside the container to run the python script
+5. The container is running infinitely but we need to enter inside the container to run the python script<br>
  docker exec -it container\_id bash
 
 
@@ -68,11 +68,11 @@
 7. The data will be written to postgres. To check, note the container id of postgres container, fetchdocker/data-takehome-postgres
 
 
-8. Run command
+8. Run command <br>
  docker exec -it container\_id bash
 
 
-9. Login to postgres using command:
+9. Login to postgres using command:<br>
  psql -d postgres -U postgres -p 5432 -h localhost -W
 
  Type password which is given in the provided document
@@ -81,8 +81,8 @@
 10. When the credentials are accepted, postgress command shell will open
 
 
-11. Type the query -
- select \* from user\_logins;
+11. Type the query -<br>
+ select \* from user\_logins;<br>
  You will see all the rows, 100 in our case
 
 **Questions asked**
@@ -146,7 +146,7 @@
 
    Python script which consists of all unit tests
 
-5. txt
+5. requirements.txt
 
    File contains the details of all libraries that are used in all code files
 
