@@ -67,16 +67,17 @@
 7. Execute script main.py
    `python main.py`
 
+8. Open another command window
 
-8. The data will be written to postgres. To check, note the container id of postgres container, <br>
+9. The data will be written to postgres. To check, note the container id of postgres container, <br>
    `fetchdocker/data-takehome-postgres`
 
 
-9. Run command <br>
+10. Run command <br>
    `docker exec -it container_id bash`
 
 
-10. Login to postgres using command:<br>
+11. Login to postgres using command:<br>
    `psql -d postgres -U postgres -p 5432 -h localhost -W`
 
    Type password which is given in the provided document
