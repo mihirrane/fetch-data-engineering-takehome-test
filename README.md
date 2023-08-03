@@ -51,7 +51,7 @@
  docker compose up
 
 4. Check the container id of the service which is running the python script. Open another command line within the folder and run <br>
- docker ps
+ docker ps <br>
 ![](https://github.com/mihirrane/fetch-data-engineering-takehome-test/blob/main/images/docker_ps.png)
 
  Copy the container id corresponding to the image fetch-sqs\_to\_postgres
@@ -61,7 +61,7 @@
  docker exec -it container\_id bash
 
 
-6. Bash shell will open. Run command
+6. Bash shell will open. Run command<br>
  python main.py
 
 
