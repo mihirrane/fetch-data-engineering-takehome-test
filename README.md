@@ -93,7 +93,7 @@ We attempted to have the code in a separate docker image from the docker image o
 
 We also tried using linking the networks: default in SQS and python script container. It did not work. In production, the SQS link will not have 'localhost' in it. It will be deployed on AWS server and thus, this network issue will not persist.
 
- ![](RackMultipart20230803-1-qgatm0_html_16a145dfdf0b0f0.png)
+![](RackMultipart20230803-1-qgatm0_html_16a145dfdf0b0f0.png)
 
 2. What other components would you want to add to make this production ready?
 
