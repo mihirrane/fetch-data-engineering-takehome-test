@@ -133,9 +133,11 @@
 **Folder contents**
 
 1. config.ini
+   
    Contains the configuration details for the postgres database and the SQS credentials
 
 2. sqs\_to\_postgress.py
+   
    Python script which contains the class SQSToPostgres. The methods in this class are encode(), decode(), fetchDataFromSQS() and writeToPostgres()
 
 3. main.py
