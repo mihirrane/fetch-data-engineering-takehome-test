@@ -62,28 +62,29 @@
 
 
 6. Bash shell will open. Run command<br>
- python main.py
+   python main.py
 
 
-7. The data will be written to postgres. To check, note the container id of postgres container, fetchdocker/data-takehome-postgres
+7. The data will be written to postgres. To check, note the container id of postgres container, <br>
+   fetchdocker/data-takehome-postgres
 
 
 8. Run command <br>
- docker exec -it container\_id bash
+   docker exec -it container\_id bash
 
 
 9. Login to postgres using command:<br>
- psql -d postgres -U postgres -p 5432 -h localhost -W
+   psql -d postgres -U postgres -p 5432 -h localhost -W
 
- Type password which is given in the provided document
+   Type password which is given in the provided document
 
 
 10. When the credentials are accepted, postgress command shell will open
 
 
 11. Type the query -<br>
- select \* from user\_logins;<br>
- You will see all the rows, 100 in our case
+    select \* from user\_logins;<br>
+ 	You will see all the rows, 100 in our case
 
 **Questions asked**
 
