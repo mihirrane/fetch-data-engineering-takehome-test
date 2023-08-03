@@ -42,7 +42,7 @@
 
 1. Clone the git repository
  	
- 	`git clone [https://github.com/mihirrane/fetch-data-engineering-takehome-test.git](https://github.com/mihirrane/fetch-data-engineering-takehome-test.git)`
+ 	`git clone https://github.com/mihirrane/fetch-data-engineering-takehome-test.git`
 
 
 2. Open config.ini and add values for password in postgres credentials
@@ -52,13 +52,13 @@
 
 4. Check the container id of the service which is running the python script. Open another command line within the folder and run <br>
  `docker ps` <br>
-![](https://github.com/mihirrane/fetch-data-engineering-takehome-test/blob/main/images/docker_ps.png)
+![](https://github.com/mihirrane/fetch-data-engineering-takehome-test/blob/main/app/images/docker_ps.png)
 
  Copy the container id corresponding to the image fetch-sqs\_to\_postgres
 
 
 5. The container is running infinitely but I need to enter inside the container to run the python script<br>
- `docker exec -it container\_id bash`
+ `docker exec -it container_id bash`
 
 
 6. Bash shell will open. Run command<br>
@@ -70,7 +70,7 @@
 
 
 8. Run command <br>
-   `docker exec -it container\_id bash`
+   `docker exec -it container_id bash`
 
 
 9. Login to postgres using command:<br>
@@ -96,7 +96,7 @@
 
 	I also tried using linking the networks: default in SQS and python script container. It did not work. In production, the SQS link will not have 'localhost' in it. It will be deployed on AWS server and thus, this network issue will not persist.
 
-	![](https://github.com/mihirrane/fetch-data-engineering-takehome-test/blob/main/images/queue_issue.png)
+	![](https://github.com/mihirrane/fetch-data-engineering-takehome-test/blob/main/app/images/queue_issue.png)
 
 2. What other components would you want to add to make this production ready?
 
