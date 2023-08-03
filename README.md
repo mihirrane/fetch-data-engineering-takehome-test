@@ -86,7 +86,7 @@
 
 
 12. Type the query -<br>
-    `select \* from user\_logins;`<br>
+    `select * from user_logins;`<br>
  	You will see all the rows, 100 in our case
 
 ## Questions asked
