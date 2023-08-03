@@ -1,0 +1,59 @@
+version: "3.9"
+services:
+  localstack:
+    image: fetchdocker/data-takehome-localstack
+    ports:
+      - 4566:4566
+    # expose:
+    #     - 4566
+    # networks: 
+    #     - default
+      # mynetwork:
+      #   aliases:
+      #     - localstack
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+
+  postgres:
+    image: fetchdocker/data-takehome-postgres
+    ports:
+      - 5432:5432
+    # networks: 
+    #   mynetwork:
+    #     aliases:
+    #       - localstack
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+  
+  sqs_to_postgres:
+    build : .
+    network_mode: host
+    volumes:
+        - ./:/fetch-test
+    # command: python main.py
+    # depends_on:
+    #    - localstack
+    #    - postgres
+    # networks: 
+    #     - default
+    # volumes:
+    #     - ./:/fetch-test
+
+    # links:
+    #   - localstack
+    #   - postgres
+
+#     networks: 
+#       - mynetwork
+
+# networks:
+#   mynetwork:
+
+
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+
+# networks:
+#   default:
+#     name: mynetwork
+
