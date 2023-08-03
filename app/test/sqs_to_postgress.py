@@ -229,5 +229,9 @@ class SQSToPostgres:
 			# Closing the connection
 			conn.close()
 
+			return True ## Insert success
+
 		except:
 			logger.exception("Issue while writing the message %s", message_id)
+
+			return False ## Insert failed

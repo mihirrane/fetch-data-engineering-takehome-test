@@ -1,0 +1,25 @@
+version: "3.9"
+## Service that are part of the docker image
+services:
+  # Localstack will run on port 4566
+  localstack:
+    image: fetchdocker/data-takehome-localstack
+    ports:
+      - 4566:4566
+
+  # Postgres will run on port 5432
+  postgres:
+    image: fetchdocker/data-takehome-postgres
+    ports:
+      - 5432:5432
+
+  # Python code along with the config file is added using the volume mount. 
+  # We set network mode as host because the python script will use host ip to access the postgres and localstack containers
+  sqs_to_postgres:
+    # build the dockerfile present in current directory
+    build : .
+    # use the host network for container access 
+    network_mode: host
+    # map the current directory to the fetch-test folder inside the container
+    volumes:
+        - ./:/fetch-test
