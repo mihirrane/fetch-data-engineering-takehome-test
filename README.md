@@ -52,7 +52,7 @@
 
 4. Check the container id of the service which is running the python script. Open another command line within the folder and run <br>
  `docker ps` <br>
-![](https://github.com/mihirrane/fetch-data-engineering-takehome-test/blob/main/app/images/docker_ps.png)
+![](https://github.com/mihirrane/fetch-data-engineering-takehome-test/blob/main/images/docker_ps.png)
 
  Copy the container id corresponding to the image fetch-sqs\_to\_postgres
 
@@ -96,7 +96,7 @@
 
 	I also tried using linking the networks: default in SQS and python script container. It did not work. In production, the SQS link will not have 'localhost' in it. It will be deployed on AWS server and thus, this network issue will not persist.
 
-	![](https://github.com/mihirrane/fetch-data-engineering-takehome-test/blob/main/app/images/queue_issue.png)
+	![](https://github.com/mihirrane/fetch-data-engineering-takehome-test/blob/main/images/queue_issue.png)
 
 2. What other components would you want to add to make this production ready?
 
@@ -137,17 +137,17 @@
    
    Contains the configuration details for the postgres database and the SQS credentials
 
-2. sqs\_to\_postgress.py
-   
-   Python script which contains the class SQSToPostgres. The methods in this class are encode(), decode(), fetchDataFromSQS() and writeToPostgres()
-
 3. main.py
 
    Python script which reads the credentials from config.ini and calls the methods from SQSToPostgres class to read data from SQS and write to postgres
 
 4. unit\_tests.py
+	
+   Python script (unit\_tests.py) which consists of all unit tests
 
-   Python script which consists of all unit tests
+5. utils
+
+   Python script (sqs_to_postgress) script which contains the class SQSToPostgres. The methods in this class are encode(), decode(), fetchDataFromSQS() and writeToPostgres()
 
 5. requirements.txt
 

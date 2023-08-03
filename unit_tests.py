@@ -1,6 +1,6 @@
 import unittest
 
-from sqs_to_postgress import SQSToPostgres
+from utils.sqs_to_postgress import SQSToPostgres
 
 # The test based on unittest module
 class TestSQSRead(unittest.TestCase):
