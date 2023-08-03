@@ -5,14 +5,14 @@ from utils.sqs_to_postgress import SQSToPostgres
 # The test based on unittest module
 class TestSQSRead(unittest.TestCase):
     def setUp(self):
-        self.sqs_to_postgres = SQSToPostgres('config.ini')
+        self.sqs_to_postgres = SQSToPostgres('../config.ini')
 
     def testSQSCredentials(self):
         '''
             Function to test when the config file is read, we have all the credential fields in the dictionary to read the SQS queue
         '''
 
-        sqs_credentials_dict = self.sqs_to_postgres.getSQSCredentials('config.ini')
+        sqs_credentials_dict = self.sqs_to_postgres.getSQSCredentials('../config.ini')
         self.assertEqual('region_name' in sqs_credentials_dict, True, "Region not present")
         self.assertEqual('endpoint' in sqs_credentials_dict, True, "Endpoint not present")
         self.assertEqual('queue_name' in  sqs_credentials_dict, True, "Queue name not present")
@@ -38,7 +38,7 @@ class TestSQSRead(unittest.TestCase):
             Function to test when the config file is read, we have all the credential fields in the dictionary to write to postgres
         '''
 
-        database_credentials = self.sqs_to_postgres.getPostgresCredentials('config.ini')
+        database_credentials = self.sqs_to_postgres.getPostgresCredentials('../config.ini')
         self.assertEqual('database' in database_credentials, True, "Database key not present")
         self.assertEqual('user' in database_credentials, True, "User key not present")
         self.assertEqual('password' in  database_credentials, True, "Password key name not present")
