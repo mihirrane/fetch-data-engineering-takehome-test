@@ -1,4 +1,4 @@
-from utils.sqs_to_postgress import SQSToPostgres
+from sqs_to_postgress import SQSToPostgres
 
 if __name__ == "__main__":
 
