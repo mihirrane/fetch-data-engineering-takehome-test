@@ -79,8 +79,7 @@
 
 11. Login to postgres using command:<br>
    `psql -d postgres -U postgres -p 5432 -h localhost -W`
-
-   Type password which is given in the provided document
+     Type password which is given in the provided document
 
 
 11. When the credentials are accepted, postgress command shell will open
